@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_main"
+    tools:context=".ui.user_generator.UserGeneratorFragment"
+    >
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="@dimen/btn_back_margin"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/button_back"
+        android:src="@drawable/btn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_color_header_blue"
+        />
+
+    <TextView
+        android:id="@+id/tvGenerateUser"
+        style="@style/HeaderText"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/generate_user"
+        android:textSize="@dimen/text_title_size"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBack"
+        />
+
+    <TextView
+        android:id="@+id/tvSelectGender"
+        style="@style/HeaderText"
+        android:layout_marginStart="@dimen/_8dp"
+        android:layout_marginTop="@dimen/_24dp"
+        android:text="@string/select_gender"
+        app:layout_constraintStart_toStartOf="@id/btnBack"
+        app:layout_constraintTop_toBottomOf="@id/tvGenerateUser"
+        />
+
+    <Spinner
+        android:id="@+id/spinnerGender"
+        style="@style/CustomSpinner"
+        android:paddingHorizontal="@dimen/_4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSelectGender"
+        />
+
+    <TextView
+        android:id="@+id/tvSelectNationality"
+        style="@style/HeaderText"
+        android:layout_marginTop="@dimen/_24dp"
+        android:text="@string/select_nationality"
+        app:layout_constraintStart_toStartOf="@id/tvSelectGender"
+        app:layout_constraintTop_toBottomOf="@id/spinnerGender"
+        />
+
+    <Spinner
+        android:id="@+id/spinnerNationality"
+        style="@style/CustomSpinner"
+        android:paddingHorizontal="@dimen/_4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSelectNationality"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="0dp"
+        android:background="@drawable/bg_btn_generate"
+        android:layout_height="60dp"
+        android:layout_marginBottom="@dimen/_24dp"
+        android:textColor="@color/text_color_btn_generate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/spinnerNationality"
+        android:elevation="12dp"
+        android:text="@string/generate"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/spinnerNationality"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

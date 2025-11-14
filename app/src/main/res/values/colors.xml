@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark">#161515</color>
+    <color name="dark_50_opacity">#80161515</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_50_opacity">#80FFFFFF</color>
+
+    <color name="blue_dark">#1039BD</color>
+    <color name="blue_light">#3571BC</color>
+
+    <color name="grey_dark">#2E2D2D</color>
+    <color name="grey_light">#3C3B3B</color>
+
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_header_size">16sp</dimen>
+    <dimen name="btn_back_margin">12sp</dimen>
+    <dimen name="_16dp">16dp</dimen>
+    <dimen name="_8dp">8dp</dimen>
+    <dimen name="_24dp">24dp</dimen>
+    <dimen name="text_title_size">18sp</dimen>
+    <dimen name="corner_radius_spinner">12dp</dimen>
+    <dimen name="_2dp">2dp</dimen>
+    <dimen name="_1dp">1dp</dimen>
+    <dimen name="margin_spinner">16dp</dimen>
+    <dimen name="_12dp">12dp</dimen>
+    <dimen name="_16sp">16sp</dimen>
+    <dimen name="_4dp">4dp</dimen>
+    <dimen name="profile_header_image_height">152dp</dimen>
+</resources>

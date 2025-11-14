@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.information.MainInfoFragment"
+    >
+
+    <TextView
+        android:id="@+id/tvFirstNameCategory"
+        style="@style/HeaderText"
+        android:layout_margin="@dimen/_16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/first_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvFirstNameValue"
+        style="@style/HeaderText"
+        android:layout_marginStart="@dimen/_8dp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toEndOf="@id/tvFirstNameCategory"
+        app:layout_constraintTop_toTopOf="@id/tvFirstNameCategory"
+        tools:text="Ritthy"
+        />
+
+
+    <TextView
+        android:id="@+id/tvLastNameCategory"
+        style="@style/HeaderText"
+        android:layout_margin="@dimen/_16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/last_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFirstNameCategory"
+        />
+
+    <TextView
+        android:id="@+id/tvLastNameValue"
+        style="@style/HeaderText"
+        android:layout_marginStart="@dimen/_8dp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toEndOf="@id/tvLastNameCategory"
+        app:layout_constraintTop_toTopOf="@id/tvLastNameCategory"
+        tools:text="Lopez"
+        />
+
+
+    <TextView
+        android:id="@+id/tvGenderCategory"
+        style="@style/HeaderText"
+        android:layout_margin="@dimen/_16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/gender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLastNameCategory"
+        />
+
+    <TextView
+        android:id="@+id/tvGenderValue"
+        style="@style/HeaderText"
+        android:layout_marginStart="@dimen/_8dp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toEndOf="@id/tvGenderCategory"
+        app:layout_constraintTop_toTopOf="@id/tvGenderCategory"
+        tools:text="male"
+        />
+
+
+    <TextView
+        android:id="@+id/tvAgeCategory"
+        style="@style/HeaderText"
+        android:layout_margin="@dimen/_16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/age"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGenderCategory"
+        />
+
+    <TextView
+        android:id="@+id/tvAgeValue"
+        style="@style/HeaderText"
+        android:layout_marginStart="@dimen/_8dp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toEndOf="@id/tvAgeCategory"
+        app:layout_constraintTop_toTopOf="@id/tvAgeCategory"
+        tools:text="33"
+        />
+
+
+    <TextView
+        android:id="@+id/tvDateOfBirthCategory"
+        style="@style/HeaderText"
+        android:layout_margin="@dimen/_16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Date of birth:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAgeCategory"
+        />
+
+    <TextView
+        android:id="@+id/tvDateOfBirthValue"
+        style="@style/HeaderText"
+        android:layout_marginStart="@dimen/_8dp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toEndOf="@id/tvDateOfBirthCategory"
+        app:layout_constraintTop_toTopOf="@id/tvDateOfBirthCategory"
+        tools:text="Ritthy"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

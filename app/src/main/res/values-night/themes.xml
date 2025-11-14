@@ -1,0 +1,14 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TZ_Workmate" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+
+    <color name="bg_color_main">@color/dark</color>
+    <color name="text_color_header_blue">@color/white</color>
+    <color name="text_color_btn_generate">@color/dark</color>
+    <color name="bg_color_gradient_end_header_profile">@color/grey_dark</color>
+    <color name="bg_color_gradient_start_header_profile">@color/grey_light</color>
+    <color name="text_color_header_profile">@color/white_50_opacity</color>
+</resources>

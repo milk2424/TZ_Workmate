@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">TZ_Workmate</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="generate_user">Generate user</string>
+    <string name="select_gender">Select Gender:</string>
+    <string name="select_nationality">Select Nationality:</string>
+    <string name="button_back">btnBack</string>
+    <string name="generate">GENERATE</string>
+    <string name="user_image">user image</string>
+    <string name="hi_how_are_you_today">Hi how are you today?</string>
+    <string name="i_am">I\'m</string>
+    <string name="main_info">Main Info</string>
+    <string name="contacts">Contacts</string>
+    <string name="email">Email</string>
+    <string name="location">Location</string>
+    <string name="first_name">First name:</string>
+    <string name="last_name">Last name:</string>
+    <string name="gender">Gender:</string>
+    <string name="age">Age:</string>
+</resources>
