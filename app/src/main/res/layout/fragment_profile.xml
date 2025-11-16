@@ -1,109 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_color_main"
-    tools:context=".ui.profile.ProfileFragment"
-    >
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/bg_color_main"
+	tools:context=".ui.profile.ProfileFragment"
+	>
 
-    <View
-        android:id="@+id/viewHeader"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/profile_header_image_height"
-        android:background="@drawable/bg_profile_header"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+	<View
+		android:id="@+id/viewHeader"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/profile_header_image_height"
+		android:background="@drawable/bg_profile_header"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
 
-    <ImageView
-        android:id="@+id/imgUser"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:contentDescription="@string/user_image"
-        app:layout_constraintBottom_toBottomOf="@id/viewHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewHeader"
-        tools:src="@color/blue_light"
-        />
-
-    <TextView
-        android:id="@+id/tvHi"
-        style="@style/ProfileHeaderText"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginTop="@dimen/_16dp"
-        android:text="@string/hi_how_are_you_today"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgUser"
-        />
-
-    <TextView
-        android:id="@+id/tvIAm"
-        style="@style/ProfileHeaderText"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginTop="@dimen/_2dp"
-        android:text="@string/i_am"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHi"
-        />
-
-    <TextView
-        android:id="@+id/tvUserName"
-        style="@style/ProfileHeaderText"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginTop="@dimen/_2dp"
-        android:fontFamily="@font/poppins_bold"
-        android:textColor="@color/text_color_header_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvIAm"
-        tools:text="Ritthy Lopez"
-        />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="@dimen/_12dp"
-        android:layout_marginVertical="@dimen/_24dp"
-        android:backgroundTint="@color/bg_color_main"
-        android:elevation="@dimen/_12dp"
-        app:cardCornerRadius="@dimen/_12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvUserName"
-        >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tlProfile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_profile_header"
-                app:tabBackground="@android:color/transparent"
-                />
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/vpProfile"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                />
-
-        </LinearLayout>
+	<ImageButton
+		android:id="@+id/btnBack"
+		android:layout_width="40dp"
+		android:layout_height="40dp"
+		android:background="@drawable/bg_btn_back"
+		android:layout_margin="@dimen/_12dp"
+		android:contentDescription="@string/button_back"
+		android:src="@drawable/btn_back"
+		android:scaleType="center"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:tint="@color/text_color_header_blue"/>
 
 
-    </androidx.cardview.widget.CardView>
+	<ImageView
+		android:id="@+id/imgUser"
+		android:layout_width="112dp"
+		android:layout_height="112dp"
+		android:contentDescription="@string/user_image"
+		app:layout_constraintBottom_toBottomOf="@id/viewHeader"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/viewHeader"
+		tools:src="@color/blue_light"
+		/>
+
+	<TextView
+		android:id="@+id/tvHi"
+		style="@style/ProfileHeaderText"
+		android:layout_marginHorizontal="8dp"
+		android:layout_marginTop="@dimen/_16dp"
+		android:text="@string/hi_how_are_you_today"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/imgUser"
+		/>
+
+	<TextView
+		android:id="@+id/tvIAm"
+		style="@style/ProfileHeaderText"
+		android:layout_marginHorizontal="8dp"
+		android:layout_marginTop="@dimen/_2dp"
+		android:text="@string/i_am"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tvHi"
+		/>
+
+	<TextView
+		android:id="@+id/tvUserName"
+		style="@style/ProfileHeaderText"
+		android:layout_marginHorizontal="8dp"
+		android:layout_marginTop="@dimen/_2dp"
+		android:fontFamily="@font/poppins_bold"
+		android:textColor="@color/text_color_header_blue"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tvIAm"
+		tools:text="Ritthy Lopez"
+		/>
+
+	<androidx.cardview.widget.CardView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_marginHorizontal="@dimen/_12dp"
+		android:layout_marginVertical="@dimen/_24dp"
+		android:backgroundTint="@color/bg_color_main"
+		app:cardCornerRadius="@dimen/_12dp"
+		app:cardElevation="@dimen/_12dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tvUserName"
+		>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			>
+
+			<com.google.android.material.tabs.TabLayout
+				android:id="@+id/tlProfile"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/bg_profile_header"
+				app:tabBackground="@android:color/transparent"
+				/>
+
+			<androidx.viewpager2.widget.ViewPager2
+				android:id="@+id/vpProfile"
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="1"
+				/>
+
+		</LinearLayout>
+
+
+	</androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

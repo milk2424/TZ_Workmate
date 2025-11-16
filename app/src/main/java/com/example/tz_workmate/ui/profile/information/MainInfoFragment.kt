@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.tz_workmate.R
 import com.example.tz_workmate.databinding.FragmentMainInfoBinding
 import com.example.tz_workmate.ui.utils.FragmentBinding
 
@@ -15,22 +14,16 @@ class MainInfoFragment : FragmentBinding<FragmentMainInfoBinding>() {
         FragmentMainInfoBinding.inflate(inflater, container, false)
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            binding.tvFirstNameValue.text = it.getString(FIRST_NAME)
+            binding.tvLastNameValue.text = it.getString(LAST_NAME)
+            binding.tvGenderValue.text = it.getString(GENDER)
+            binding.tvAgeValue.text = it.getLong(AGE).toString()
+            binding.tvDateOfBirthValue.text = it.getString(DATE_OF_BIRTH)
         }
     }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_info, container, false)
-    }
-
 
     companion object {
 
@@ -46,12 +39,14 @@ class MainInfoFragment : FragmentBinding<FragmentMainInfoBinding>() {
             gender: String,
             age: Long,
             dateOfBirth: String
-        ) =
-            MainInfoFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        ) = MainInfoFragment().apply {
+            arguments = Bundle().apply {
+                putString(FIRST_NAME, firstName)
+                putString(LAST_NAME, lastName)
+                putString(GENDER, gender)
+                putLong(AGE, age)
+                putString(DATE_OF_BIRTH, dateOfBirth)
             }
+        }
     }
 }

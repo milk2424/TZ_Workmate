@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/userGeneratorFragment"
-    >
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/nav_graph"
+	app:startDestination="@id/userGeneratorFragment">
 
-    <fragment
-        android:id="@+id/userGeneratorFragment"
-        android:name="com.example.tz_workmate.ui.user_generator.UserGeneratorFragment"
-        android:label="fragment_user_generator"
-        tools:layout="@layout/fragment_user_generator"
-        />
+	<fragment
+		android:id="@+id/userGeneratorFragment"
+		android:name="com.example.tz_workmate.ui.user_generator.UserGeneratorFragment"
+		android:label="fragment_user_generator"
+		tools:layout="@layout/fragment_user_generator">
+		<action
+			android:id="@+id/action_userGeneratorFragment_to_profileFragment"
+			app:destination="@id/profileFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/profileFragment"
+		android:name="com.example.tz_workmate.ui.profile.ProfileFragment"
+		android:label="fragment_profile"
+		tools:layout="@layout/fragment_profile">
+		<argument
+			android:name="user"
+			app:argType="com.example.domain.user_generator.model.User" />
+	</fragment>
 </navigation>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".ui.profile.phone.PhoneFragment"
+	>
+
+
+	<TextView
+		android:id="@+id/tvEmailCategory"
+		style="@style/HeaderText"
+		android:layout_margin="@dimen/_16dp"
+		android:fontFamily="@font/poppins_bold"
+		android:text="@string/profile_email"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<TextView
+		android:id="@+id/tvEmailValue"
+		style="@style/HeaderText"
+		android:layout_marginStart="@dimen/_8dp"
+		android:fontFamily="@font/poppins_regular"
+		app:layout_constraintStart_toEndOf="@id/tvEmailCategory"
+		app:layout_constraintTop_toTopOf="@id/tvEmailCategory"
+		tools:text="jennie.nichols@example.com"
+		/>
+
+
+	<TextView
+		android:id="@+id/tvUserNameCategory"
+		style="@style/HeaderText"
+		android:layout_margin="@dimen/_16dp"
+		android:fontFamily="@font/poppins_bold"
+		android:text="@string/username"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tvEmailCategory"
+		/>
+
+	<TextView
+		android:id="@+id/tvUserNameValue"
+		style="@style/HeaderText"
+		android:layout_marginStart="@dimen/_8dp"
+		android:fontFamily="@font/poppins_regular"
+		app:layout_constraintStart_toEndOf="@id/tvUserNameCategory"
+		app:layout_constraintTop_toTopOf="@id/tvUserNameCategory"
+		tools:text="yellowpeacock117"
+		/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

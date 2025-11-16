@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+
+
+	<TextView
+		android:id="@+id/tvCountryCategory"
+		style="@style/HeaderText"
+		android:layout_margin="@dimen/_16dp"
+		android:fontFamily="@font/poppins_bold"
+		android:text="@string/country"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<TextView
+		android:id="@+id/tvCountryValue"
+		style="@style/HeaderText"
+		android:layout_marginStart="@dimen/_8dp"
+		android:fontFamily="@font/poppins_regular"
+		app:layout_constraintStart_toEndOf="@id/tvCountryCategory"
+		app:layout_constraintTop_toTopOf="@id/tvCountryCategory"
+		tools:text="United States"
+		/>
+
+
+	<TextView
+		android:id="@+id/tvStateCategory"
+		style="@style/HeaderText"
+		android:layout_margin="@dimen/_16dp"
+		android:fontFamily="@font/poppins_bold"
+		android:text="@string/state"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tvCountryCategory"
+		/>
+
+	<TextView
+		android:id="@+id/tvStateValue"
+		style="@style/HeaderText"
+		android:layout_marginStart="@dimen/_8dp"
+		android:fontFamily="@font/poppins_regular"
+		app:layout_constraintStart_toEndOf="@id/tvStateCategory"
+		app:layout_constraintTop_toTopOf="@id/tvStateCategory"
+		tools:text="Michigan"
+		/>
+
+	<TextView
+		android:id="@+id/tvCityCategory"
+		style="@style/HeaderText"
+		android:layout_margin="@dimen/_16dp"
+		android:fontFamily="@font/poppins_bold"
+		android:text="@string/city"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tvStateCategory"
+		/>
+
+	<TextView
+		android:id="@+id/tvCityValue"
+		style="@style/HeaderText"
+		android:layout_marginStart="@dimen/_8dp"
+		android:fontFamily="@font/poppins_regular"
+		app:layout_constraintStart_toEndOf="@id/tvCityCategory"
+		app:layout_constraintTop_toTopOf="@id/tvCityCategory"
+		tools:text="Billings"
+		/>
+
+	<TextView
+		android:id="@+id/tvStreetCategory"
+		style="@style/HeaderText"
+		android:layout_margin="@dimen/_16dp"
+		android:fontFamily="@font/poppins_bold"
+		android:text="@string/street"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tvCityCategory"
+		/>
+
+	<TextView
+		android:id="@+id/tvStreetValue"
+		style="@style/HeaderText"
+		android:layout_marginStart="@dimen/_8dp"
+		android:fontFamily="@font/poppins_regular"
+		app:layout_constraintStart_toEndOf="@id/tvStreetCategory"
+		app:layout_constraintTop_toTopOf="@id/tvStreetCategory"
+		tools:text="Valwood Pkwy, 8929"
+		/>
+
+	<TextView
+		android:id="@+id/tvPostcodeCategory"
+		style="@style/HeaderText"
+		android:layout_margin="@dimen/_16dp"
+		android:fontFamily="@font/poppins_bold"
+		android:text="@string/postcode"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tvStreetCategory"
+		/>
+
+	<TextView
+		android:id="@+id/tvPostcodeValue"
+		style="@style/HeaderText"
+		android:layout_marginStart="@dimen/_8dp"
+		android:fontFamily="@font/poppins_regular"
+		app:layout_constraintStart_toEndOf="@id/tvPostcodeCategory"
+		app:layout_constraintTop_toTopOf="@id/tvPostcodeCategory"
+		tools:text="63104"
+		/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

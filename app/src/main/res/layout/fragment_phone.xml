@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".ui.profile.phone.PhoneFragment"
+	>
+
+
+	<TextView
+		android:id="@+id/tvPhoneCategory"
+		style="@style/HeaderText"
+		android:layout_margin="@dimen/_16dp"
+		android:fontFamily="@font/poppins_bold"
+		android:text="@string/phone"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<TextView
+		android:id="@+id/tvPhoneValue"
+		style="@style/HeaderText"
+		android:layout_marginStart="@dimen/_8dp"
+		android:fontFamily="@font/poppins_regular"
+		app:layout_constraintStart_toEndOf="@id/tvPhoneCategory"
+		app:layout_constraintTop_toTopOf="@id/tvPhoneCategory"
+		tools:text="(272) 790-0888"
+		/>
+
+
+	<TextView
+		android:id="@+id/tvCellCategory"
+		style="@style/HeaderText"
+		android:layout_margin="@dimen/_16dp"
+		android:fontFamily="@font/poppins_bold"
+		android:text="@string/cell"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tvPhoneCategory"
+		/>
+
+	<TextView
+		android:id="@+id/tvCellValue"
+		style="@style/HeaderText"
+		android:layout_marginStart="@dimen/_8dp"
+		android:fontFamily="@font/poppins_regular"
+		app:layout_constraintStart_toEndOf="@id/tvCellCategory"
+		app:layout_constraintTop_toTopOf="@id/tvCellCategory"
+		tools:text="(489) 330-2385"
+		/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
