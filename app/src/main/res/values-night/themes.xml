@@ -11,4 +11,6 @@
     <color name="bg_color_gradient_end_header_profile">@color/grey_dark</color>
     <color name="bg_color_gradient_start_header_profile">@color/grey_light</color>
     <color name="text_color_header_profile">@color/white_50_opacity</color>
+    <color name="tab_active_indicator_color">@color/dark</color>
+    <color name="tab_inactive_indicator_color">@color/white_50_opacity</color>
 </resources>

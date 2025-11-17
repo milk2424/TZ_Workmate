@@ -101,10 +101,12 @@
 
 			<com.google.android.material.tabs.TabLayout
 				android:id="@+id/tlProfile"
+				app:tabIndicator="@null"
+				app:tabIconTint="@color/color_tab_layout_active_tab"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:background="@drawable/bg_profile_header"
-				app:tabBackground="@android:color/transparent"
+				app:tabBackground="@drawable/selector_bg_tab_layout_profile"
 				/>
 
 			<androidx.viewpager2.widget.ViewPager2

@@ -2,13 +2,19 @@ package com.example.data.user_generator.impl
 
 import com.example.data.network.RandomUserService
 import com.example.data.network.dto.toDomain
+import com.example.data.storage.dao.MainDao
+import com.example.data.storage.mapper.EntityMapper
+import com.example.domain.user_generator.model.User
 import com.example.domain.user_generator.model.UserResponseState
 import com.example.domain.user_generator.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
-class UserRepositoryImpl(private val randomUserService: RandomUserService) : UserRepository {
+class UserRepositoryImpl(
+    private val randomUserService: RandomUserService,
+    private val dao: MainDao
+) : UserRepository {
     override fun generateUser(gender: String, nat: String) = flow {
         try {
             emit(UserResponseState.Loading)
@@ -23,4 +29,8 @@ class UserRepositoryImpl(private val randomUserService: RandomUserService) : Use
             emit(UserResponseState.NetworkError)
         }
     }.flowOn(Dispatchers.IO)
+
+    override suspend fun insertUser(user: User) {
+        dao.insertUser(EntityMapper.map(user))
+    }
 }

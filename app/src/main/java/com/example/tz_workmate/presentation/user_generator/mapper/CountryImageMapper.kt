@@ -26,4 +26,29 @@ object CountryImageMapper {
             else -> 0
         }
     }
+
+    fun mapCodeToResourceId(flagName: String): Int {
+        return when (flagName) {
+            "AU" -> R.drawable.flag_austria
+            "BR" -> R.drawable.flag_brazil
+            "CA" -> R.drawable.flag_canada
+            "CH" -> R.drawable.flag_switzerland
+            "DE" -> R.drawable.flag_germany
+            "DK" -> R.drawable.flag_denmark
+            "ES" -> R.drawable.flag_spain
+            "FI" -> R.drawable.flag_finland
+            "FR" -> R.drawable.flag_france
+            "GB" -> R.drawable.flag_united_kingdom
+            "IN" -> R.drawable.flag_india
+            "IR" -> R.drawable.flag_iran
+            "MX" -> R.drawable.flag_mexico
+            "NL" -> R.drawable.flag_netherlands
+            "NO" -> R.drawable.flag_norway
+            "RS" -> R.drawable.flag_serbia
+            "TR" -> R.drawable.flag_turkey
+            "US" -> R.drawable.flag_usa
+            else -> 0
+        }
+    }
+
 }

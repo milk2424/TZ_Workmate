@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     kotlin("plugin.serialization") version "2.0.21"
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -61,6 +62,12 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit2.converter.gson)
 
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+
+    implementation(libs.adapterdelegates4.kotlin.dsl)
+    implementation(libs.adapterdelegates4.kotlin.dsl.viewbinding)
 
     implementation(project(":data"))
     implementation(project(":domain"))

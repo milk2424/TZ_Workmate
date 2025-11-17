@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.tz_workmate.databinding.FragmentMainInfoBinding
+import com.example.tz_workmate.ui.profile.information.mapper.DateMapper
 import com.example.tz_workmate.ui.utils.FragmentBinding
 
 class MainInfoFragment : FragmentBinding<FragmentMainInfoBinding>() {
@@ -14,14 +15,14 @@ class MainInfoFragment : FragmentBinding<FragmentMainInfoBinding>() {
         FragmentMainInfoBinding.inflate(inflater, container, false)
 
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?)  {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             binding.tvFirstNameValue.text = it.getString(FIRST_NAME)
             binding.tvLastNameValue.text = it.getString(LAST_NAME)
             binding.tvGenderValue.text = it.getString(GENDER)
             binding.tvAgeValue.text = it.getLong(AGE).toString()
-            binding.tvDateOfBirthValue.text = it.getString(DATE_OF_BIRTH)
+            binding.tvDateOfBirthValue.text = DateMapper.map(it.getString(DATE_OF_BIRTH, ""))
         }
     }
 

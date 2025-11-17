@@ -11,6 +11,7 @@ data class UserDTO(
 fun UserDTO.toDomain(): User {
     val user = this.results.first()
     return User(
+        id = user.login.id,
         gender = user.gender,
         firstName = user.name.first,
         lastName = user.name.last,
@@ -89,7 +90,7 @@ data class Location(
     val country: String,
 
     @SerializedName("postcode")
-    val postcode: Int,
+    val postcode: String,
 
     @SerializedName("coordinates")
     val coordinates: Coordinates,
@@ -112,6 +113,8 @@ data class Coordinates(
 )
 
 data class Login(
+    @SerializedName("uuid")
+    val id: String,
     @SerializedName("username")
     val username: String
 )
@@ -121,7 +124,7 @@ data class Dob(
     val date: String,
 
     @SerializedName("age")
-    val age: Int
+    val age: Long
 )
 
 data class Picture(

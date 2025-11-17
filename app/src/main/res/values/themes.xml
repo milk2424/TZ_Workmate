@@ -40,5 +40,7 @@
     <color name="bg_color_gradient_end_header_profile">@color/blue_dark</color>
     <color name="bg_color_gradient_start_header_profile">@color/blue_light</color>
     <color name="text_color_header_profile">@color/dark_50_opacity</color>
+    <color name="tab_active_indicator_color">@color/blue_dark</color>
+    <color name="tab_inactive_indicator_color">@color/white</color>
 
 </resources>

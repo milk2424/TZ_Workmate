@@ -6,6 +6,7 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.domain.local_data.model.Country
@@ -14,6 +15,7 @@ import com.example.domain.user_generator.model.User
 import com.example.tz_workmate.R
 import com.example.tz_workmate.databinding.FragmentUserGeneratorBinding
 import com.example.tz_workmate.presentation.user_generator.UserGeneratorState
+import com.example.tz_workmate.presentation.user_generator.UserGeneratorState.Default
 import com.example.tz_workmate.presentation.user_generator.UserGeneratorState.Empty
 import com.example.tz_workmate.presentation.user_generator.UserGeneratorState.Loading
 import com.example.tz_workmate.presentation.user_generator.UserGeneratorState.NetworkError
@@ -30,19 +32,20 @@ class UserGeneratorFragment : FragmentBinding<FragmentUserGeneratorBinding>() {
 
     private val viewModel: UserGeneratorViewModel by viewModel()
 
-    private val countryAdapter by lazy {
-        CountryAdapter(requireContext(), viewModel.loadCountries())
-    }
+    private var countryAdapter: CountryAdapter? = null
 
-    private val genderAdapter by lazy {
-        GenderAdapter(requireContext(), viewModel.loadGenders())
-    }
+    private var genderAdapter: GenderAdapter? = null
+
 
     override fun bind(inflater: LayoutInflater, container: ViewGroup?) =
         FragmentUserGeneratorBinding.inflate(inflater, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        countryAdapter = CountryAdapter(requireContext(), viewModel.loadCountries())
+        genderAdapter = GenderAdapter(requireContext(), viewModel.loadGenders())
 
         binding.spinnerNationality.adapter = countryAdapter
         binding.spinnerGender.adapter = genderAdapter
@@ -51,13 +54,16 @@ class UserGeneratorFragment : FragmentBinding<FragmentUserGeneratorBinding>() {
             val selectedGender = binding.spinnerGender.selectedItem as Gender
             val selectedCountry = binding.spinnerNationality.selectedItem as Country
             viewModel.generateUser(
-                selectedGender.gender.lowercase(),
-                selectedCountry.code.lowercase()
+                selectedGender.gender.lowercase(), selectedCountry.code.lowercase()
             )
         }
 
         binding.btnErrorOk.setOnClickListener {
             showDefault()
+        }
+
+        binding.btnBack.setOnClickListener {
+            navigateToUsersList()
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
@@ -66,11 +72,23 @@ class UserGeneratorFragment : FragmentBinding<FragmentUserGeneratorBinding>() {
             }
         }
 
+        val backCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                navigateToUsersList()
+            }
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, backCallback)
+
+    }
+
+    private fun navigateToUsersList() {
+        findNavController().navigate(R.id.action_userGeneratorFragment_to_usersFragment)
     }
 
     private fun renderState(state: UserGeneratorState) {
         when (state) {
-            is UserGeneratorState.Default -> showDefault()
+            is Default -> showDefault()
             is Success -> openUserProfile(state.user)
             is NetworkError -> showNetworkError()
             is ServerError -> showServerError(state.message)
@@ -105,13 +123,14 @@ class UserGeneratorFragment : FragmentBinding<FragmentUserGeneratorBinding>() {
         binding.groupError.visibility = VISIBLE
         binding.groupContent.visibility = GONE
         binding.progressBar.visibility = GONE
+        binding.tvError.text = message
     }
 
     private fun openUserProfile(user: User) {
-        showDefault()
         findNavController().navigate(
             UserGeneratorFragmentDirections.actionUserGeneratorFragmentToProfileFragment(user)
         )
+        viewModel.setDefaultState()
     }
 
     private fun showDefault() {
@@ -121,6 +140,8 @@ class UserGeneratorFragment : FragmentBinding<FragmentUserGeneratorBinding>() {
     }
 
     override fun onDestroyView() {
+        countryAdapter = null
+        genderAdapter = null
         binding.spinnerNationality.adapter = null
         binding.spinnerGender.adapter = null
         super.onDestroyView()
